@@ -1,3 +1,4 @@
+# Bogumił Wierzchowski
 # cd .\lab\lab01\
 # poetry run python .\program1.py pan-tadeusz.txt -l 5 -n 15
 
