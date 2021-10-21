@@ -10,6 +10,7 @@ from rich.progress import track
 import random
 import math
 from PIL import Image, ImageDraw
+import os
 
 class Symulacja:
 
@@ -114,6 +115,12 @@ g = args.g
 f = args.f
 
 sym = Symulacja(r, j, b, h, k, g, f)
+
+path = './obrazki'
+try: 
+    os.mkdir(path) 
+except OSError: 
+    pass
 
 n = 0
 k = 0
