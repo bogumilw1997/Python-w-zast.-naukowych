@@ -1,6 +1,6 @@
 # Bogumił Wierzchowski
 # cd .\lab\lab02\
-# poetry run python .\program2.py 5 1 0.5 2 5 -g 0.3 -f symulacja
+# poetry run python .\program2.py 10 1 0.5 2 5 -g 0.3 -f symulacja
 
 import argparse
 import numpy as np
@@ -50,9 +50,10 @@ k = 0
 height = 200 * r
 width = 200 * r
 
-img = sym.rysuj_stan(height, width)
-img.save(f'obrazki/{sym.f}0.png')
-img.close()
+images = []
+
+img0 = sym.rysuj_stan(height, width)
+img0.save(f'obrazki/{sym.f}0.png')
 
 for i in track(sym):
     n += 1
@@ -79,5 +80,7 @@ for i in track(sym):
         k+=1
         n = 0
         img = i.rysuj_stan(height, width)
+        images.append(img)
         img.save(f'obrazki/{sym.f}{k}.png')
-        img.close()
+
+img0.save('symulacja.gif', save_all=True, append_images=images, optimize=False, duration=500, loop=0)
