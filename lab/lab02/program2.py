@@ -47,8 +47,8 @@ except OSError:
 n = 0
 k = 0
 
-height = 1024
-width = 1024
+height = 200 * r
+width = 200 * r
 
 img = sym.rysuj_stan(height, width)
 img.save(f'obrazki/{sym.f}0.png')
