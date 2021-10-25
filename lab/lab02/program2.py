@@ -1,6 +1,6 @@
 # Bogumił Wierzchowski
 # cd .\lab\lab02\
-# poetry run python .\program2.py 10 1 0.5 2 5 -g 0.3 -f symulacja
+# poetry run python .\program2.py 10 -1 0.5 2 5 -g 0.3 -f symulacja
 
 import argparse
 import numpy as np
@@ -83,4 +83,4 @@ for i in track(sym):
         images.append(img)
         img.save(f'obrazki/{sym.f}{k}.png')
 
-img0.save('symulacja.gif', save_all=True, append_images=images, optimize=False, duration=500, loop=0)
+img0.save(f'{sym.f}.gif', save_all=True, append_images=images, optimize=False, duration=500, loop=0)
