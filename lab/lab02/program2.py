@@ -1,6 +1,6 @@
 # Bogumił Wierzchowski
 # cd .\lab\lab02\
-# poetry run python .\program2.py 10 -1 0.5 2 5 -g 0.3 -f symulacja
+# poetry run python .\program2.py 10 1 0.5 2 5 -g 0.3 -f symulacja
 
 import argparse
 import numpy as np
@@ -13,6 +13,7 @@ from PIL import Image, ImageDraw
 import os
 from klasy import Symulacja
 
+rich.traceback.install()
 console = Console()
 console.clear()
 console.rule('Symulacja modelu Isinga.')

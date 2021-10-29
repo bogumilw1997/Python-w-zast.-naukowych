@@ -7,11 +7,17 @@ authors = ["Your Name <you@example.com>"]
 [tool.poetry.dependencies]
 python = ">=3.9,<3.10"
 keras = "^2.6.0"
-tensorflow = "^2.6.0"
 tf-nightly-gpu = "^2.8.0-alpha.20211016"
 ascii_graph = "^1.5.1"
 rich = "^10.12.0"
 Pillow = "^8.4.0"
+requests = "^2.26.0"
+bs4 = "^0.0.1"
+wikipedia = "^1.4.0"
+pandas = "^1.3.4"
+seaborn = "^0.11.2"
+lxml = "^4.6.3"
+html5lib = "^1.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
