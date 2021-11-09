@@ -20,7 +20,7 @@ console.rule('Web-scraping.')
 console.print()
 rich.traceback.install()
 
-parser = argparse.ArgumentParser(description="Fantastyczny program do wizualizacji modelu Isinga 2D!")
+parser = argparse.ArgumentParser(description="Web Scraping")
 parser.add_argument('-f', help='Nazwa pliku do zapisu', default='output.json', type=str)
 
 args = parser.parse_args()

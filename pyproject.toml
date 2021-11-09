@@ -13,11 +13,11 @@ rich = "^10.12.0"
 Pillow = "^8.4.0"
 requests = "^2.26.0"
 bs4 = "^0.0.1"
-wikipedia = "^1.4.0"
 pandas = "^1.3.4"
 seaborn = "^0.11.2"
 lxml = "^4.6.3"
 html5lib = "^1.1"
+selenium = "^4.0.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
