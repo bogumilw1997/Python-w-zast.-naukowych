@@ -1,3 +1,5 @@
+# poetry run python .\program4.py -f output.json -n 4
+
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
@@ -45,7 +47,7 @@ html = driver.find_element(By.TAG_NAME, 'html')
 
 start = 0
 
-video_list = []
+video_dict = {}
 
 for i in range(n):
     
@@ -59,11 +61,7 @@ for i in range(n):
             
             title = video.find_element(By.XPATH, './/*[@id="video-title"]').text
             views = video.find_element(By.XPATH, './/*[@id="metadata-line"]/span[1]').text
-            vid_item = {
-                'title':title,
-                'views':views
-                }
-            video_list.append(vid_item)
+            video_dict[title] = views
         
     start = videos_len - start
     
@@ -71,12 +69,8 @@ for i in range(n):
     html.send_keys(Keys.PAGE_DOWN)
     html.send_keys(Keys.PAGE_DOWN)
     time.sleep(1.5)
-    
-df = pd.DataFrame(video_list)
-print(df.head(10))
-df.to_json(f'data/{output_file}', orient="split", indent = 4)
 
-with open(f'data/{output_file}{2}', 'w', encoding='utf-8-sig') as f:
-    json.dump(video_list, f)
+with open(f'data/{output_file}', 'w', encoding='utf-8-sig') as f:
+    json.dump(video_dict, f, ensure_ascii=False, indent=4)
 
 driver.close()
