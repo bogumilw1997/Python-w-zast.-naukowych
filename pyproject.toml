@@ -18,6 +18,8 @@ seaborn = "^0.11.2"
 lxml = "^4.6.3"
 html5lib = "^1.1"
 selenium = "^4.0.0"
+bokeh = "^2.4.1"
+jupyterlab = "^3.2.3"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
