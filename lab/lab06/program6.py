@@ -12,15 +12,16 @@ def timeit(_func = None, n = 10):
         
         @functools.wraps(func)
         def wrapper(*args, **kwargs):
+            
             start = time.time()
             
             for i in range(n):
                 result = func(*args, **kwargs)
 
             end = time.time()
-            t = (end-start)/n
+            t = (end-start)/n*1000
             
-            console.print(f'Average execution time of {func.__name__} after {n} iterations: {t*1000} ms')
+            console.print(f'Average execution time of {func.__name__} after {n} iterations: ' + "{:.3f}".format(t))
             
             return result
         
@@ -31,14 +32,14 @@ def timeit(_func = None, n = 10):
     
     return decorator
 
-@timeit(n = 2)
-def f1(x):
+@timeit(n = 3)
+def f1():
     time.sleep(1)
-    return (x**2 - x*(x + 5) + np.cos(x))
+
 
 console = Console()
 console.clear()
 rich.traceback.install()
 
-a = f1(8)
+a = f1()
 
