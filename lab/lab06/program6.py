@@ -21,7 +21,7 @@ def timeit(_func = None, n = 10):
             end = time.time()
             t = (end-start)/n*1000
             
-            console.print(f'Average execution time of {func.__name__} after {n} iterations: ' + "{:.3f}".format(t))
+            console.print(f'Average execution time of {func.__name__} after {n} iterations: ' + "{:.3f}".format(t) + ' ms')
             
             return result
         
@@ -32,7 +32,7 @@ def timeit(_func = None, n = 10):
     
     return decorator
 
-@timeit(n = 3)
+@timeit(n = 5)
 def f1():
     time.sleep(1)
 
