@@ -32,9 +32,9 @@ def timeit(_func = None, n = 10):
     
     return decorator
 
-@timeit(n = 5)
+@timeit(n = 7)
 def f1():
-    time.sleep(1)
+    time.sleep(0.5)
 
 
 console = Console()
