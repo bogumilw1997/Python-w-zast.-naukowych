@@ -27,9 +27,9 @@ async def main(links_list):
     
     async with aiohttp.ClientSession() as session:
         for link in links_list:
-            tasks.append(await write_img(session, link))
+            tasks.append(write_img(session, link))
             
-    await asyncio.gather(*tasks)
+        await asyncio.gather(*tasks)
     
 asyncio.run(main(links))
 
